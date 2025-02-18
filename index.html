@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #0a2342; /* Navy blue */
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 20px;
+    }
+
+    #cta {
+      background-color: #3a8d44; /* Remnant green */
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    #cta h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    #cta p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input[type="email"] {
+      padding: 15px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 400px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 50px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    input[type="email"]:focus {
+      border: 2px solid #0a2342;
+      box-shadow: 0 0 10px rgba(10, 35, 66, 0.3);
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 16px;
+      background-color: #0a2342; /* Navy blue */
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3a8d44; /* Remnant green */
+    }
+
+    footer {
+      background-color: #0a2342; /* Navy blue */
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    #message {
+      font-size: 18px;
+      color: #3a8d44;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 28px;
+      }
+
+      #cta h2 {
+        font-size: 28px;
+      }
+
+      input[type="email"] {
+        width: 80%;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Subscribe to Our Newsletter</h1>
+      <p>Get the latest updates and news delivered right to your inbox.</p>
+    </div>
+  </header>
+
+  <section id="cta">
+    <div class="container">
+      <h2>Join our community today!</h2>
+      <p>Stay informed with our weekly newsletter, filled with the latest news, insights, and more.</p>
+      <form id="subscription-form">
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p id="message"></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Newsletter. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('subscription-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message');
+
+      // Simulating form submission for now
+      if (email) {
+        message.textContent = `Thank you for subscribing with ${email}!`;
+        message.style.color = '#3a8d44'; // Success message in green
+        document.getElementById('email').value = ''; // Clear the input field
+      } else {
+        message.textContent = 'Please enter a valid email address.';
+        message.style.color = 'red'; // Error message in red
+      }
+    });
+  </script>
+</body>
+</html>
